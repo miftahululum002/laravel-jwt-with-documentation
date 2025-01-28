@@ -8,8 +8,6 @@ class ResponseLibrary
     public static function successResponse($message = 'Success', $data = null, $code = 200)
     {
         $res = [
-            'success'   => true,
-            'code'      => $code,
             'message'   => $message,
             'data'      => $data,
             'error'     => null,
@@ -30,8 +28,6 @@ class ResponseLibrary
     public static function errorResponse($message = 'Error', $error = null, $code = 500)
     {
         $res = [
-            'success'   => false,
-            'code'      => $code,
             'message'   => $message,
             'data'      => null,
             'error'     => $error,

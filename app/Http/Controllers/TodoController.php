@@ -95,7 +95,7 @@ class TodoController extends Controller
     }
 
     /** 
-     * Destroy
+     * Delete
      * 
      * Delete todo
      * 

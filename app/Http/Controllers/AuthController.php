@@ -143,6 +143,15 @@ class AuthController extends Controller
         }
     }
 
+    /**
+     * Me
+     * 
+     * Me.
+     * 
+     * Digunakan untuk mendapatkan informasi user yang sedang login
+     * 
+     * @return \Illuminate\Http\Response
+     */
     public function me(Request $request)
     {
         $user = $request->user();
