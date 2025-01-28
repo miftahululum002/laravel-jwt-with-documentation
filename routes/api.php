@@ -2,15 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\HomeController;
 use App\Http\Controllers\TodoController;
 use App\Http\Middleware\JwtMiddleware;
 
 Route::name('api.')->group(function () {
-    Route::match([
-        'get',
-        // 'post', 'put', 'delete', 'patch'
-    ], '/', [HomeController::class, 'index'])->name('index');
     Route::controller(AuthController::class)->group(function () {
         Route::post('login', 'login')->name('login');
         Route::post('register', 'register')->name('register');
