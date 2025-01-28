@@ -29,7 +29,7 @@ class AuthController extends Controller
     {
         $validate = Validator::make($request->all(), [
             'email'     => 'required|string|email',
-            'password'  => 'required|string',
+            'password'  => 'required|string|min:8',
         ]);
         if ($validate->fails()) {
             return ResponseLibrary::errorResponse('Form input not valid', $validate->errors(), 422);
@@ -69,7 +69,7 @@ class AuthController extends Controller
         $validate = Validator::make($request->all(), [
             'name'      => 'required|string|max:255',
             'email'     => 'required|string|email|max:255|unique:users',
-            'password'  => 'required|string|min:6',
+            'password'  => 'required|string|min:8',
         ]);
         if ($validate->fails()) {
             return ResponseLibrary::errorResponse('Form input not valid', $validate->errors(), 422);
