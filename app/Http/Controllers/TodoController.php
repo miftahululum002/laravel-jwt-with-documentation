@@ -18,10 +18,10 @@ class TodoController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function index()
+    public function index(Request $request)
     {
-        $data = Todo::all();
-        return ResponseLibrary::successResponse('Success', $data);
+        $todos = $request->user()->todos;
+        return ResponseLibrary::successResponse('Success', $todos);
     }
 
     /**
