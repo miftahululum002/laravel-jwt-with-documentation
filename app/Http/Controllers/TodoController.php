@@ -45,7 +45,7 @@ class TodoController extends Controller
         $data['created_by'] = $userId;
         try {
             $todo = Todo::create($data);
-            return ResponseLibrary::successResponse('Todo created successfully', $todo);
+            return ResponseLibrary::successResponse('Data created successfully', $todo);
         } catch (\Exception $e) {
             return ResponseLibrary::internalErrorResponse('Internal server error', $e->getMessage());
         }
@@ -60,7 +60,7 @@ class TodoController extends Controller
      */
     public function show(Todo $id)
     {
-        return ResponseLibrary::successResponse('Success', $id);
+        return ResponseLibrary::successResponse('Data found', $id);
     }
 
     /** 
@@ -88,7 +88,7 @@ class TodoController extends Controller
             $id->description = $request->description;
             $id->updated_by = $userId;
             $id->save();
-            return ResponseLibrary::successResponse('Todo updated successfully', $id);
+            return ResponseLibrary::successResponse('Data updated successfully', $id);
         } catch (\Exception $e) {
             return ResponseLibrary::internalErrorResponse('Internal server error', $e->getMessage());
         }
